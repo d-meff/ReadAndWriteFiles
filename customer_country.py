@@ -1,4 +1,11 @@
 import csv
 
 def main():
-    pass
+    infile = open('customers.csv', 'r')
+    csvfile = csv.reader(infile)
+
+    for row in csvfile:
+        print(row)
+
+main()
+
