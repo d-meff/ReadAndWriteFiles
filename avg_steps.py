@@ -1,5 +1,5 @@
-from calendar import month
 import csv
+from csv import *
 
 def main():
     infile = open('steps.csv', 'r')
@@ -47,8 +47,28 @@ def main():
             total_steps[11] += int(row[1])
             month_counts[11] += 1
 
+    month_avg_steps = []
 
-    print(total_steps)
-    print(month_counts)
+    for i in range(0, 12):
+        month_avg_steps.append(round(total_steps[i] / month_counts[i],1))
+
+    outfile = open('avg_steps.csv', 'w', newline="")
+    csvwriter = csv.writer(outfile)
+
+    headers = ["Month", "Average Steps"]
+    csvwriter.writerow(headers)
+
+    csvwriter.writerow(['January', month_avg_steps[0]])
+    csvwriter.writerow(['February', month_avg_steps[1]])
+    csvwriter.writerow(['March', month_avg_steps[2]])
+    csvwriter.writerow(['April', month_avg_steps[3]])
+    csvwriter.writerow(['May', month_avg_steps[4]])
+    csvwriter.writerow(['June', month_avg_steps[5]])
+    csvwriter.writerow(['July', month_avg_steps[6]])
+    csvwriter.writerow(['August', month_avg_steps[7]])
+    csvwriter.writerow(['September', month_avg_steps[8]])
+    csvwriter.writerow(['October', month_avg_steps[9]])
+    csvwriter.writerow(['November', month_avg_steps[10]])
+    csvwriter.writerow(['December', month_avg_steps[11]])
 
 main()
