@@ -11,10 +11,15 @@ def main():
     while decision != 'q':
         for row in csvfile:
             print(f'Full Name: {row[1]} {row[2]}')
+            
+                        
+            base_salary = format(float(row[3]), ",.2f")
+            bonus = format(float(float(row[3]) * float(row[4])), ",.2f")
+            total_salary = format((float(row[3]) * float(row[4])) + float(row[3]), ",.2f")
 
-            print(f'Base Salary: ${row[3]}')
-            print(f'Bonus: ${round(float(row[3]) * float(row[4]), 2)}')
-            print(f'Total Comp: ${round(float(row[3]) * float(row[4]), 2) + float(row[3])}')
+            print(f'Base Salary: ${base_salary}')
+            print(f'Bonus: ${bonus}')
+            print(f'Total Salary: ${total_salary}')
             
             decision = input("Press 'q' to quit or any other key to see the next employee's details: ")
 
