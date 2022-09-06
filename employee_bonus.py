@@ -12,10 +12,9 @@ def main():
         for row in csvfile:
             print(f'Full Name: {row[1]} {row[2]}')
 
-            # didn't format these as currency but it wasn't specified in the instructions
-            print(f'Base Salary: {row[3]}')
-            print(f'Bonus: {round(float(row[3]) * float(row[4]), 2)}')
-            print(f'Total Comp: {round(float(row[3]) * float(row[4]), 2) + float(row[3])}')
+            print(f'Base Salary: ${row[3]}')
+            print(f'Bonus: ${round(float(row[3]) * float(row[4]), 2)}')
+            print(f'Total Comp: ${round(float(row[3]) * float(row[4]), 2) + float(row[3])}')
             
             decision = input("Press 'q' to quit or any other key to see the next employee's details: ")
 
